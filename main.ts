@@ -1,7 +1,9 @@
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-extra";
+import stealthPlugin from "puppeteer-extra-plugin-stealth";
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: false });
+  puppeteer.use(stealthPlugin());
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
   await page.setViewport({ width: 1280, height: 1080 });
   await page.goto("https://leetcode.com/futabooo/", {
