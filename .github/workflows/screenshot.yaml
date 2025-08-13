@@ -26,6 +26,6 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          gh add screenshot/score.png
-          gh commit -m "update score screenshot"
-          gh push
+          git add screenshot/score.png
+          git commit -m "update score screenshot"
+          git push
